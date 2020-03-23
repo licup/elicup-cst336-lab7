@@ -13,7 +13,7 @@ app.get("/", async function(req, res){
  
  console.dir("parsedData: " + parsedData); //displays content of the object
     
- res.render("index", {"image":parsedData.hits[0].largeImageURL});
+ res.render("index.html", {"image":parsedData.hits[0].largeImageURL});
             
 }); //root route
 
@@ -25,7 +25,7 @@ app.get("/results", async function(req, res){
     let orient = req.query.orient;
     let parsedData = await getImages(keyword, orient);
 
-    res.render("results", {"images":parsedData, "img":img});
+    res.render("results.html", {"images":parsedData, "img":img});
     
 });//results route
 
