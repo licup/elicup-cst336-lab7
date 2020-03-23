@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Pixabay Search (Express Version) </title>
-        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
-        <link href="/css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-
-        <h1> Pixabay Search Results </h1>
-        
-        <form action="/results">
-            
-            Keyword: <input type="text" name="keyword">
-            <button> Search! </button>
-            
-        </form> <br>
-        
-        TODO: Display several images here!<br>
-        <h3>Likes: <%= images.hits[img[0]].likes %></h3>
-        <img src='<%= images.hits[0].largeImageURL %>' width='250'>
-        <h3>Likes: <%= images.hits[img[1]].likes %></h3>
-         <img src='<%= images.hits[1].largeImageURL %>' width='250'>
-         <h3>Likes: <%= images.hits[img[2]].likes %></h3>
-          <img src='<%= images.hits[2].largeImageURL %>' width='250'>
-          <h3>Likes: <%= images.hits[img[3]].likes %></h3>
-           <img src='<%= images.hits[3].largeImageURL %>' width='250'>
-        
-
+<%- include('partials/index.ejs') %>
+       <div class="row">   
+            <div id="column">              
+                <h3>Likes: <%= images.hits[img[0]].likes %></h3>
+                <img src=' <%= images.hits[img[0]].webformatURL%> ' width='350'>\
+                </div>
+            <div id="column">    
+                <h3>Likes: <%= images.hits[img[1]].likes %></h3>
+                <img src='<%= images.hits[img[1]].webformatURL%>' width='350'>
+                </div>
+            <div id="column">    
+                <h3>Likes: <%= images.hits[img[2]].likes %></h3>
+                <img src=' <%= images.hits[img[2]].webformatURL %> ' width='350'>
+                </div>
+            <div id="column">    
+                <h3>Likes: <%= images.hits[img[3]].likes %></h3>
+                <img src='<%= images.hits[img[3]].webformatURL%>' width='350'>
+                </div>
+            </div>
     </body>
 </html>
