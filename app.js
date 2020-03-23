@@ -22,9 +22,9 @@ app.get("/results", async function(req, res){
     
     //console.dir(req);
     let keyword = req.query.keyword; //gets the value that the user typed in the form using the GET method
-    let orient = req.query.option;
+    let orient = req.query.orient;
     let parsedData = await getImages(keyword, orient);
-
+    var img = Random(parsedData);
     res.render("results.html", {"images":parsedData, "img":img});
     
 });//results route
@@ -59,7 +59,7 @@ function getImages(keyword, orient){
 function Random(res){
     var arr=[];
     while (arr.length!=4){
-    let randomIndex = Math.floor(Math.random() * res.hits.length);
+        let randomIndex = Math.floor(Math.random() * res.hits.length);
         if(arr.indexOf(randomIndex)==-1){
             arr.push(randomIndex);
         }

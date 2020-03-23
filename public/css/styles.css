@@ -75,3 +75,12 @@ nav a:hover{
     width:100%;
     text-align: center;
 }
+.column {
+  flex: 33.33%;
+  font-family: 'Odibee Sans',cursive;
+  padding-left: 10px;
+}
+.row {
+  display: flex;
+  padding-left: 50px;
+}
