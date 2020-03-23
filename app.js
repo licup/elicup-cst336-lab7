@@ -22,7 +22,7 @@ app.get("/results", async function(req, res){
     
     //console.dir(req);
     let keyword = req.query.keyword; //gets the value that the user typed in the form using the GET method
-    let orient = req.query.orient;
+    let orient = req.query.option;
     let parsedData = await getImages(keyword, orient);
 
     res.render("results.html", {"images":parsedData, "img":img});
